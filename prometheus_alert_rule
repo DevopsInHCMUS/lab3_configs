@@ -8,4 +8,4 @@ groups:
           severity: critical
         annotations:
           summary: "Too many server errors"
-          description: "More than 1 HTTP 5xx errors in the last 30 seconds."
+          description: "More than 10 HTTP 5xx errors in the last 30 seconds."
