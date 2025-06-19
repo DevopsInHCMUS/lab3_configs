@@ -48,23 +48,3 @@ spec:
               value: "http://tracing-server.tracing.svc.cluster.local:9411/api/v2/spans"
           resources:
             {}
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: "loki-test-connection"
-  labels:
-    helm.sh/chart: spring-petclinic-chart-0.1.0
-    app.kubernetes.io/name: loki
-    app.kubernetes.io/instance: loki
-    app.kubernetes.io/version: "1.16.0"
-    app.kubernetes.io/managed-by: Helm
-  annotations:
-    "helm.sh/hook": test
-spec:
-  containers:
-    - name: wget
-      image: busybox
-      command: ['wget']
-      args: ['loki:3100']
-  restartPolicy: Never
